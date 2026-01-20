@@ -1,0 +1,137 @@
+# Movie Dashboard Project
+
+A scalable web application for searching movies from the IMDb dataset with comprehensive performance analysis.
+
+-----------------------------------------------
+## VERY IMPORTANT ##
+The following files are git-ignored in order to be able to perform commits with ease; please refer to the slides in order to retrieve theese datas:
+
+/data {
+    name.basics.tsv
+    title.akas.tsv
+    title.basics.tsv
+    title.crew.tsv
+    title.episode.tsv
+    title.principals.tsv
+    title.ratings.tsv
+}
+movies.db
+movies.db-journal
+-----------------------------------------------
+
+## Project Structure
+
+### Core Application
+- `database.py` - Database layer with normalized tables
+- `api.py` - FastAPI web application returning JSON
+- `setup_database.py` - Database initialization script
+
+### Performance Analysis (Steps 1-4)
+- `generate_queries.py` - Query generation based on rating probability
+- `load_test.py` - Locust-based load testing
+- `performance_test.py` - Performance analysis and bottleneck identification
+- `jmt_analysis.py` - JMT theoretical modeling
+- `improved_architecture.py` - Enhanced architecture with caching
+- `generate_report.py` - Comprehensive report generation
+
+### Automation
+- `run_complete_analysis.py` - Complete analysis pipeline
+- `run_setup.sh` - Quick setup script
+
+## Complete Analysis (All 4 Steps)
+
+**Quick Start:**
+```bash
+pip install -r requirements.txt
+python run_complete_analysis.py
+```
+
+**Manual Setup:**
+1. **Install dependencies:** `pip install -r requirements.txt`
+2. **Set up database:** `python setup_database.py`
+3. **Generate queries:** `python generate_queries.py`
+4. **Start API server:** `python api.py`
+5. **Run performance tests:** `python performance_test.py`
+6. **Run JMT analysis:** `python jmt_analysis.py`
+7. **Generate report:** `python generate_report.py`
+
+## API Endpoints
+
+- `GET /search/{query}` - Search movies by title
+- `GET /movie/{tconst}` - Get detailed movie information
+- `GET /health` - Health check endpoint
+
+## Step-by-Step Analysis
+
+### Step 1: Web Application ✅
+- Movie search with actors, directors, ratings
+- JSON API endpoints
+- Normalized database schema
+
+### Step 2: Query Generation ✅
+- 10,000 queries based on rating probability
+- Higher-rated movies have higher selection probability
+
+### Step 3: Load Testing ✅
+**Interactive (Locust):**
+```bash
+locust -f load_test.py --host=http://localhost:8000
+```
+**Automated:**
+```bash
+python performance_test.py
+```
+
+### Step 4: Architecture Analysis ✅
+**JMT Theoretical Analysis:**
+```bash
+python jmt_analysis.py
+```
+**Improved Architecture:**
+```bash
+python improved_architecture.py  # Runs on port 8001
+```
+
+## Database Schema
+
+The application uses a normalized SQLite database with the following tables:
+
+- **movies** - Movie information (title, year, runtime, genres)
+- **people** - Person information (actors, directors)
+- **ratings** - Movie ratings and vote counts
+- **directors** - Movie-director relationships
+- **actors** - Movie-actor relationships with characters
+
+## Performance Optimization
+
+The system includes several optimizations:
+- Database indexes on frequently queried columns
+- Connection pooling
+- Normalized schema to reduce data redundancy
+- Efficient query patterns
+
+## Generated Reports
+
+- `performance_results.json` - Load test metrics
+- `jmt_analysis.json` - Theoretical analysis
+- `jmt_analysis.png` - Performance visualization
+- `performance_report.json` - Complete analysis data
+- `PERFORMANCE_REPORT.md` - Final readable report
+
+## Architecture Improvements
+
+**Current Bottlenecks:**
+- SQLite concurrent access limitations
+- No caching layer
+- Single-threaded database connections
+
+**Implemented Solutions:**
+- Connection pooling (10 connections)
+- In-memory caching with TTL (5 min)
+- Optimized database queries
+- Enhanced error handling
+
+**Expected Improvements:**
+- 2-3x throughput increase
+- Reduced response times
+- Better concurrent user handling

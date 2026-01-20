@@ -1,0 +1,72 @@
+[
+  {
+    "num_users": 1,
+    "total_requests": 167,
+    "successful_requests": 167,
+    "success_rate": 100.0,
+    "avg_response_time": 0.07610572169640821,
+    "median_response_time": 0.07854008674621582,
+    "p95_response_time": 0.0897892951965332,
+    "throughput": 2.783333333333333
+  },
+  {
+    "num_users": 5,
+    "total_requests": 1148,
+    "successful_requests": 1148,
+    "success_rate": 100.0,
+    "avg_response_time": 0.026207582460463254,
+    "median_response_time": 0.007904052734375,
+    "p95_response_time": 0.09115227460861205,
+    "throughput": 19.133333333333333
+  },
+  {
+    "num_users": 10,
+    "total_requests": 2480,
+    "successful_requests": 2480,
+    "success_rate": 100.0,
+    "avg_response_time": 0.016561245245318258,
+    "median_response_time": 0.010504961013793945,
+    "p95_response_time": 0.09619584083557128,
+    "throughput": 41.333333333333336
+  },
+  {
+    "num_users": 20,
+    "total_requests": 5101,
+    "successful_requests": 5101,
+    "success_rate": 100.0,
+    "avg_response_time": 0.013566138346600453,
+    "median_response_time": 0.009514093399047852,
+    "p95_response_time": 0.019358086585998534,
+    "throughput": 85.01666666666667
+  },
+  {
+    "num_users": 50,
+    "total_requests": 13150,
+    "successful_requests": 13150,
+    "success_rate": 100.0,
+    "avg_response_time": 0.012390725023392942,
+    "median_response_time": 0.0044869184494018555,
+    "p95_response_time": 0.012358915805816651,
+    "throughput": 219.16666666666666
+  },
+  {
+    "num_users": 100,
+    "total_requests": 27856,
+    "successful_requests": 16376,
+    "success_rate": 58.78805284319357,
+    "avg_response_time": 0.005401957046711916,
+    "median_response_time": 0.0043790340423583984,
+    "p95_response_time": 0.013593566417694092,
+    "throughput": 272.93333333333334
+  },
+  {
+    "num_users": 200,
+    "total_requests": 55040,
+    "successful_requests": 16376,
+    "success_rate": 29.752906976744185,
+    "avg_response_time": 0.008452724729099097,
+    "median_response_time": 0.006131529808044434,
+    "p95_response_time": 0.023902928829193114,
+    "throughput": 272.93333333333334
+  }
+]

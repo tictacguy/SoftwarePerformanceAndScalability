@@ -1,0 +1,5 @@
+movies.db
+movies.db-journal
+myenv
+__pycache__
+data
